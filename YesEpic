@@ -1,0 +1,4 @@
+for i, v in pairs(getgc()) do
+   if typeof(v) == "function" and islclosure(v) and getfenv(v) and tostring(getfenv(v).script) == "ChatService" and getfenv(v).script.Parent == nil and table.find(debug.getconstants(v), "Kick") then
+       hookfunction(v, function() end)
+end end
